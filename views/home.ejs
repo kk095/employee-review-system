@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/home.css">
+<%if(locals.user.isAdmin){%>
+    <div class="navbar">
+        <div class="logo">
+           <h2>Employee Review System</h2> 
+        </div>
+        <div class="nav_links">
+            <div class="user_name">
+                hello,<span id="username"><%=user.name%></span> 
+            </div>
+            <div class="assign_task">
+                <a href="">Assign Task</a>
+                
+            </div>
+            <div class="e_dashboard">
+                <a href="">Employees</a>
+                
+            </div>
+            <div class="r_dashboard">
+                <a href="">Reviews</a>
+                
+            </div>
+            <div class="signout">
+                <a href="/signout">Sign out</a>
+                
+            </div>
+        </div>
+    </div>
+<%}%>
+
+<h1 class="reviewheading">Your Reviews</h1>
+<div class="container">
+    <div class="reviews">
+        <div class="review" id="review-<>">
+
+        </div>
+    </div>
+    <div class="charts">
+        
+    </div>
+</div>

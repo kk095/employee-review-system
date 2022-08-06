@@ -1,0 +1,56 @@
+body{
+    text-align: center;
+}
+
+.navbar{
+    height: 50px;
+    background-color: rgb(14, 1, 68);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding: 0 10px;
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+.navbar h2{
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+#username{
+    color: rgb(252, 241, 18);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.nav_links{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+.nav_links div{
+    padding: 5px 10px;
+}
+.nav_links div:not(:nth-child(1)):hover{
+    background-color: rgb(29, 201, 249);
+}
+
+.container{
+    text-align: center;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+.reviewheading{
+    width:400px;
+    padding: 10px 0;
+    background-color: rgb(14, 1, 68);
+    color:white;
+    text-align: center;
+    box-shadow: 0px 0px 10px 2px #155a78;
+    margin: 30px auto;
+}
