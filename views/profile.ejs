@@ -1,122 +1,110 @@
 <%-include('_navbar')%>
-<link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="/css/home.css" />
+<link rel="stylesheet" href="/css/profile.css" />
 <h1 class="reviewheading">Employee Dashboard</h1>
 <div class="container">
-    <div class="reviews">
-        <h3>Reviews Given To <%=employee.name%> </h3>
-        <div class="charts">
-            <div class="chart_show">
-                <div class="fivestar">
-                    <div class="filldiv" id="five">
-
-                    </div>
-                    <div class="starname">
-                        5  <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="fourstar">
-                    <div class="filldiv"  id="four">
-
-                    </div>
-                    <div class="starname">
-                        4  <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="threestar" >
-                    <div class="filldiv" id="three">
-
-                    </div>
-                    <div class="starname">
-                        3 <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="twostar" >
-                    <div class="filldiv" id="two">
-
-                    </div>
-                    <div class="starname">
-                        2  <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="onestar">
-                    <div class="filldiv" id="one">
-
-                    </div>
-                    <div class="starname">
-                        1  <i class="fas fa-star"></i>
-                    </div>
-                </div>
-            </div>
+  <div class="reviews">
+    <h3>Reviews Given To <%=employee.name%></h3>
+    <div class="charts">
+      <div class="chart_show">
+        <div class="fivestar">
+          <div class="filldiv" id="five"></div>
+          <div class="starname">5 <i class="fas fa-star"></i></div>
         </div>
-        <div class="all-reviews">
-            <%for(let x of employee.reviewtome){%>
-                <div class="review" id="<%=x.id%>">
-                    <div class="dp">
-                        <img src="/img/profilepic.png" alt="no-img">
-                        <%=x.reviewFrom.name%>
-                    </div>
-                    <div class="reviewText">
-                        <%=x.review%>
-                    </div>
-                    <div class="reviewStar">
-                        <div>
-                        <%for(let y=1;y<=x.star;y++){%>
-                            <i class="fas fa-star"></i>
-                        <%}%>
-                        </div>
-                        <div class="removebtn">
-                            <a href="/admin/update_review/<%=employee.id%>/<%=x.id%>/<%=x.reviewFrom.id%>">Delete Review</a>
-                        </div>
-                    </div>
-                </div>
-                <%}%>
+        <div class="fourstar">
+          <div class="filldiv" id="four"></div>
+          <div class="starname">4 <i class="fas fa-star"></i></div>
         </div>
+        <div class="threestar">
+          <div class="filldiv" id="three"></div>
+          <div class="starname">3 <i class="fas fa-star"></i></div>
+        </div>
+        <div class="twostar">
+          <div class="filldiv" id="two"></div>
+          <div class="starname">2 <i class="fas fa-star"></i></div>
+        </div>
+        <div class="onestar">
+          <div class="filldiv" id="one"></div>
+          <div class="starname">1 <i class="fas fa-star"></i></div>
+        </div>
+      </div>
     </div>
-    <div class="assign_review">
-        <h3>Reviews Assign To <%=employee.name%> </h3>
-        <div class="assign_container">
-           <%for(x of employee.assign){%>
-            <div class="newAssign" id="<%=x.id%>">
-                <div class="assignuser">
-                    <div class="assignpic">
-                        <img src="/img/profilepic.png" alt="no-img">
-                    </div>
-                    <div class="assign_name">
-                        <%=x.reviewTo.name%>
-                    </div>
-                </div>
-                <div class="assignbtns">
-                    <div class="assign_info">
-                        Assigned by Admin
-                    </div>
-                        <a href="/admin/Delete_assign/<%=employee.id%>/<%=x.id%>">
-                            <button class="assign_btn"> <h2>Cancel Assign</h2> </button>
-                        </a>
-                    
-                </div>
-            </div>
+    <div class="all-reviews">
+      <%for(let x of employee.reviewtome){%>
+      <div class="review" id="<%=x.id%>">
+        <div class="dp">
+          <img src="/img/profilepic.png" alt="no-img" />
+          <%=x.reviewFrom.name%>
+        </div>
+        <div class="reviewText"><%=x.review%></div>
+        <div class="reviewStar">
+          <div>
+            <%for(let y=1;y<=x.star;y++){%>
+            <i class="fas fa-star"></i>
             <%}%>
+          </div>
+          <div class="removebtn">
+            <a
+              href="/admin/update_review/<%=employee.id%>/<%=x.id%>/<%=x.reviewFrom.id%>"
+              >Delete Review</a
+            >
+          </div>
         </div>
+      </div>
+      <%}%>
     </div>
+  </div>
+  <div class="assign_review">
+    <h3>Reviews Assign To <%=employee.name%></h3>
+    <div class="assign_container">
+      <%for(x of employee.assign){%>
+      <div class="newAssign" id="<%=x.id%>">
+        <div class="assignuser">
+          <div class="assignpic">
+            <img src="/img/profilepic.png" alt="no-img" />
+          </div>
+          <div class="assign_name"><%=x.reviewTo.name%></div>
+        </div>
+        <div class="assignbtns">
+          <div class="assign_info">Assigned by Admin</div>
+          <a href="/admin/Delete_assign/<%=employee.id%>/<%=x.id%>">
+            <button class="assign_btn"><h2>Cancel Assign</h2></button>
+          </a>
+        </div>
+      </div>
+      <%}%>
+    </div>
+  </div>
 </div>
 <script>
     let sum = <%=one%> + <%=two%> + <%=three%> + <%=four%> + <%=five%>;
-    console.log("sum:",sum);
-    let one = parseInt((<%=one%>/sum)*80);
-    let two = parseInt((<%=two%>/sum)*80);
-    let three = parseInt((<%=three%>/sum)*80);
-    let four = parseInt((<%=four%>/sum)*80);
-    let five = parseInt((<%=five%>/sum)*80);
     let onediv = document.querySelector("#one");
-    let twodiv = document.querySelector("#two");
-    let threediv = document.querySelector("#three");
-    let fourdiv = document.querySelector("#four");
-    let fivediv = document.querySelector("#five");
-    onediv.style.width= one+"%";
-    twodiv.style.width= two+"%";
-    threediv.style.width= three +"%";
-    fourdiv.style.width= four+"%";
-    fivediv.style.width= five+"%";
-    
+  let twodiv = document.querySelector("#two");
+  let threediv = document.querySelector("#three");
+  let fourdiv = document.querySelector("#four");
+  let fivediv = document.querySelector("#five");
+  let one
+  let two
+  let three;
+  let four
+  let five
+  if(sum){
+      one = parseInt((<%=one%>/sum)*90);
+      two = parseInt((<%=two%>/sum)*90);
+      three = parseInt((<%=three%>/sum)*90);
+      four = parseInt((<%=four%>/sum)*90);
+      five = parseInt((<%=five%>/sum)*90);
+      onediv.style.width= one+"%";
+      twodiv.style.width= two+"%";
+      threediv.style.width= three +"%";
+      fourdiv.style.width= four+"%";
+      fivediv.style.width= five+"%";
+  }else{
+    console.log("else");
+      onediv.style.width=0+"%";
+      twodiv.style.width=0+"%";
+      threediv.style.width= 0+"%";
+      fourdiv.style.width= 0+"%";
+      fivediv.style.width= 0+"%";
+  }
 </script>

@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const db = require("./config/mongoose");
-const flash = require("connect-flash");
 const passport = require("passport");
 const mongoStore = require("connect-mongo");
 const session = require("express-session");
 const passportLocal = require("./config/passport_local");
 const expressEjsLayout = require("express-ejs-layouts");
+const ENV = require("./environment");
 
 // RUNNING PORT
 const port = 8000;
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.use(
   session({
     name: "codial",
-    secret: "something",
+    secret: ENV.SECRATE_KEY,
     saveUninitialized: false,
     resave: false,
     cookie: {
