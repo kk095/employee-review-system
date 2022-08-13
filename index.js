@@ -56,7 +56,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use("/", require("./router"));
 
-app.listen(port, function (err) {
+app.listen(process.env.PORT, function (err) {
   if (err) {
     console.log(err);
   }
