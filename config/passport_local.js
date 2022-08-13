@@ -14,11 +14,9 @@ passport.use(
     function (req, email, password, done) {
       Employee.findOne({ email: email }, function (err, user) {
         if (err) {
-          req.flash("error", err);
           return done(err);
         }
         if (!user || user.password != password) {
-          req.flash("error", "invalid username or password !");
           return done(null, false);
         }
         return done(null, user);
