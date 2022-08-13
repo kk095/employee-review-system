@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/review.css" />
+<title>Home</title>
+<div class="container">
+  <h1>Give Review To Our Employee</h1>
+  <form action="/employee/submit_review" method="post">
+    <div>
+      <label for="review-emp">Review :</label>
+      <textarea
+        name="review"
+        id="review-emp"
+        cols="50"
+        rows="10"
+        placeholder="Write review..."
+      >
+      </textarea>
+    </div>
+    <div>
+      <label class="stars">Stars :</label>
+      <i class="far fa-star" id="1" onclick="starClick(event)"></i>
+      <i class="far fa-star" id="2" onclick="starClick(event)"></i>
+      <i class="far fa-star" id="3" onclick="starClick(event)"></i>
+      <i class="far fa-star" id="4" onclick="starClick(event)"></i>
+      <i class="far fa-star" id="5" onclick="starClick(event)"></i>
+    </div>
+    <input type="number" name="star" id="star" hidden />
+    <input type="text" name="assign" value="<%=assign%>" hidden />
+    <input type="text" name="reviewTo" value="<%=reviewTo%>" hidden />
+    <input type="text" name="reviewFrom" value="<%=user.id%>" hidden />
+
+    <button type="submit">Submit</button>
+  </form>
+  <div class="redirect_link">
+    <a href="/">Back To Dashboard</a>
+  </div>
+</div>
+
+<script src="/js/review.js"></script>

@@ -17,15 +17,13 @@ a{
     aspect-ratio: 5/4;
     background-color: rgba(255, 255, 255, .4);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+
 }
 
-.signup_box{
-    height: 95%;
-    width: 100%;
-}
 
 h1{
     text-align: center;
@@ -33,18 +31,20 @@ h1{
 }
 
 form{
-    margin: 10px 0;
+    margin: 30px 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    height: 80%;
+    height: auto;
+    width: 100%;
 }
 
-input{
+
+
+select{
     width: 80%;
-    /* height: 50px; */
-    aspect-ratio: 10/1;
+    height: 50px;
     outline: none;
     border: none;
     border: 1px solid black;
@@ -52,9 +52,10 @@ input{
     position: relative;
     font-size: 1.5rem;
     padding-left: 10px;
+    margin: 20px 0;
 }
 
-input:focus{
+select:focus{
     border: 1px solid rgb(29, 180, 250);
     box-shadow: 0px 0px 5px 1px rgb(14, 180, 246);
 }
@@ -78,20 +79,21 @@ button:active{
     transform: scale(.9)
 }
 
-a:hover{
-    text-decoration: underline;
+
+.redirect_link {
+    position: absolute;
+    bottom: 2px;
 }
 
-@media screen and (max-width:500px){
+/* *****************BREAKPOINT*********************** */
+
+
+@media screen and (max-width:500px) {
+    /* ----------breakpoint for 500px ------------ */
     .container{
-        width: 98%;
-        height: auto;
+        width: 100%;
     }
-    .signup_box{
-        height: auto;
-    }
-    input{
-        margin: 10px;
-        font-size: 1.2rem;
+    select{
+        width: 99%;
     }
 }

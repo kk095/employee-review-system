@@ -1,9 +1,10 @@
 <%-include('_navbar')%>
 <link rel="stylesheet" href="/css/home.css">
-<h1 class="reviewheading">Your Dashboard</h1>
+<link rel="stylesheet" href="/css/profile.css">
+<h1 class="reviewheading">Employee Dashboard</h1>
 <div class="container">
     <div class="reviews">
-        <h3>Reviews Given To You</h3>
+        <h3>Reviews Given To <%=employee.name%> </h3>
         <div class="charts">
             <div class="chart_show">
                 <div class="fivestar">
@@ -52,29 +53,34 @@
             <%for(let x of employee.reviewtome){%>
                 <div class="review" id="<%=x.id%>">
                     <div class="dp">
-                        <img src="./img/profilepic.png" alt="no-img">
-                        Employee
+                        <img src="/img/profilepic.png" alt="no-img">
+                        <%=x.reviewFrom.name%>
                     </div>
                     <div class="reviewText">
                         <%=x.review%>
                     </div>
                     <div class="reviewStar">
+                        <div>
                         <%for(let y=1;y<=x.star;y++){%>
                             <i class="fas fa-star"></i>
                         <%}%>
+                        </div>
+                        <div class="removebtn">
+                            <a href="/admin/update_review/<%=employee.id%>/<%=x.id%>/<%=x.reviewFrom.id%>">Delete Review</a>
+                        </div>
                     </div>
                 </div>
                 <%}%>
         </div>
     </div>
     <div class="assign_review">
-        <h3>Reviews Assign To You</h3>
+        <h3>Reviews Assign To <%=employee.name%> </h3>
         <div class="assign_container">
            <%for(x of employee.assign){%>
             <div class="newAssign" id="<%=x.id%>">
                 <div class="assignuser">
                     <div class="assignpic">
-                        <img src="./img/profilepic.png" alt="no-img">
+                        <img src="/img/profilepic.png" alt="no-img">
                     </div>
                     <div class="assign_name">
                         <%=x.reviewTo.name%>
@@ -84,9 +90,10 @@
                     <div class="assign_info">
                         Assigned by Admin
                     </div>
-                    <a href="/employee/view/<%=x.id%>">
-                        <button class="assign_btn"> <h2>Give Review</h2> </button>
-                    </a>
+                        <a href="/admin/Delete_assign/<%=employee.id%>/<%=x.id%>">
+                            <button class="assign_btn"> <h2>Cancel Assign</h2> </button>
+                        </a>
+                    
                 </div>
             </div>
             <%}%>
@@ -96,11 +103,11 @@
 <script>
     let sum = <%=one%> + <%=two%> + <%=three%> + <%=four%> + <%=five%>;
     console.log("sum:",sum);
-    let one = parseInt((<%=one%>/sum)*90);
-    let two = parseInt((<%=two%>/sum)*90);
-    let three = parseInt((<%=three%>/sum)*90);
-    let four = parseInt((<%=four%>/sum)*90);
-    let five = parseInt((<%=five%>/sum)*90);
+    let one = parseInt((<%=one%>/sum)*80);
+    let two = parseInt((<%=two%>/sum)*80);
+    let three = parseInt((<%=three%>/sum)*80);
+    let four = parseInt((<%=four%>/sum)*80);
+    let five = parseInt((<%=five%>/sum)*80);
     let onediv = document.querySelector("#one");
     let twodiv = document.querySelector("#two");
     let threediv = document.querySelector("#three");

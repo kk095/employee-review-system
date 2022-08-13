@@ -1,12 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// MODELS FOR ALL REVIEWS
-const reviewSchema = new mongoose.Schema(
+
+// MODELS FOR ALL ASSIGNED REVIEWS
+const assignSchema = new mongoose.Schema(
   {
-    review: {
-      type: String,
-      require: true,
-    },
     reviewTo: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Employee",
@@ -15,18 +12,12 @@ const reviewSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Employee",
     },
-    star: {
-      type: Number,
-      min: 1,
-      max: 5,
-      require: true,
-    },
   },
   {
     timestamps: true,
   }
 );
 
-const Review = mongoose.model("Review", reviewSchema);
+const Assign = mongoose.model("Assign", assignSchema);
 
-module.exports = Review;
+module.exports = Assign;

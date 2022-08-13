@@ -1,0 +1,86 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar{
+    height: 50px;
+    background-color: rgb(14, 1, 68);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding: 0 10px;
+}
+.bars{
+    display: none;
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+.navbar h2{
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+#username{
+    color: rgb(252, 241, 18);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.nav_links{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+.nav_links div{
+    padding: 5px 10px;
+}
+.nav_links div:not(:nth-child(1)):hover{
+    background-color: rgb(29, 201, 249);
+}
+
+@media screen and (max-width:700px){
+    .navbar{
+        height: auto;
+        padding: 5px 10px;
+        flex-wrap: wrap;
+    }
+    .logo{
+        text-align: center;
+        width: 100%;
+    }
+    .nav_links{
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .nav_links div{
+        padding: 2px 10px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .navbar{
+        flex-direction: column;
+        height: auto;
+    }
+    .nav_links{
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav_dis{
+        display: block;
+    }
+
+    .bars{
+        display: block;
+        align-self: flex-end;
+    }
+    .bars i{
+        cursor: pointer;
+    }
+}

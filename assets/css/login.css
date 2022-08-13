@@ -23,8 +23,11 @@ a{
 }
 
 .login_box{
-    height: 95%;
+    height: 98%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1{
@@ -33,10 +36,10 @@ h1{
 }
 
 form{
-    margin: 30px 0;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 80%;
 }
@@ -79,4 +82,23 @@ button:active{
 
 a:hover{
     text-decoration: underline;
+}
+
+.sign_line{
+    align-self: center;
+    justify-items: flex-end;
+}
+
+@media screen and (max-width:500px){
+    .container{
+        width: 98%;
+        height: 300px;
+    }
+    .login_box{
+        height: 100%;
+    }
+    input{
+        margin: 10px 0;
+        width: 100%;
+    }
 }

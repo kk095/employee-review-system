@@ -5,6 +5,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const Employee = require("../models/employees");
 
 passport.use(
+  // THIS FUNCTION IS USED TO LOGIN THE USER
   new LocalStrategy(
     {
       usernameField: "email",
@@ -26,24 +27,24 @@ passport.use(
   )
 );
 
-// serialization
-
 passport.serializeUser(function (User, done) {
+  // TO SERIALIZE THE USER ID
   done(null, User.id);
 });
 
 passport.deserializeUser(function (id, done) {
+  // TO DESERIALIZE THE USER ID
   Employee.findById(id, function (err, user) {
     if (err) {
       console.log("error in finding user during deserializing in passport js");
       return done(err);
     }
-    // console.log(""user)
     return done(null, user);
   });
 });
 
 passport.checkAuthentication = function (req, res, next) {
+  // TO CHECK USER IS LOGGED-IN OR NOT
   if (req.isAuthenticated()) {
     return next();
   }
@@ -51,6 +52,7 @@ passport.checkAuthentication = function (req, res, next) {
 };
 
 passport.setAuthenticatedUser = function (req, res, next) {
+  // TO SET LOGGED-IN USER IN EVERY REQUEST.
   if (req.isAuthenticated()) {
     res.locals.user = req.user;
   }

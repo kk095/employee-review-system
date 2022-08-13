@@ -1,13 +1,34 @@
+<%-include('_navbar')%>
 
-    <link rel="stylesheet" href="/css/home.css">
-    <title>Home</title>
-    <div class="container">
-        <%=locals.flash.success%>
-        <div class="login_box">
-
+<link rel="stylesheet" href="/css/employee.css">
+<div class="container">
+    <h1>All Employee</h1>
+    <%for(x of employee){%>
+        <div class="item">
+            <div class="emp_img_div">
+                <div class="img_div">
+                    <img src="/img/profilepic.png" alt="">
+                </div>
+                <div class="emp_name">
+                    <%=x.name%>
+                </div>
+            </div>
+            <div class="emp_email">
+                <%=x.email%>
+            </div>
+            <div class="emp_btns">
+                <div class="btn btn1">
+                     <a href="/admin/dashboard/<%=x.id%>">
+                        Profile
+                     </a> </div>
+                
+                <div class="btn btn2"> <a href="/admin/remove_employee/<%=x.id%>">
+                    Delete
+                 </a></div>
+                <div class="btn btn3"> <a href="/admin/makeAdmin/<%=x.id%>">
+                    MakeAdmin
+                 </a></div>
+            </div>
         </div>
-        <div class="sign_line">Didn't Register? <a href="#"></a>Signup</div>
-    </div>
-
-
-    <script src="/js/home.js"></script>
+    <%}%>
+</div>

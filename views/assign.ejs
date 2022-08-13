@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/assign.css" />
+<title>assign review</title>
+<div class="container">
+    <h1>Assign Review</h1>
+    <form action="/admin/assign_review" method="post">
+      <label for="reviewto">Review To:</label>
+      <select name="reviewto" id="reviewto">
+        <%for(x of employees){%>
+        <option value="<%=x.email%>"><%=x.name%></option>
+        <%}%>
+      </select>
+      <label for="reviewby">Review By:</label>
+      <select name="reviewby" id="reviewby">
+        <%for(x of employees){%>
+        <option value="<%=x.email%>"><%=x.name%></option>
+        <%}%>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="redirect_link">
+      <a href="/">Go Back To Dashboard</a>
+    </div>
+  </div>
+
+  <script src="/js/home.js"></script>
+</div>

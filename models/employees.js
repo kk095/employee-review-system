@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+// MODELS FOR ALL EMPLOYEES
 const employeeSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -29,6 +30,12 @@ const employeeSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Review",
+    },
+  ],
+  assign: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Assign",
     },
   ],
 });

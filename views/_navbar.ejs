@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/_navbar.css" />
+<div class="navbar">
+  <div class="logo">
+    <h3><a href="/"> Employee Review System </a></h3>
+  </div>
+  <div class="bars"><i class="fas fa-bars"></i></div>
+  <div class="nav_links">
+    <div class="user_name">
+      hello,<span id="username"> <a href="/"> <%=user.name%> </a> </span>
+    </div>
+    <%if(locals.user.isAdmin){%>
+    <div class="assign_task">
+      <a href="/admin/assign_page">Assign Task</a>
+    </div>
+    <div class="e_dashboard">
+      <a href="/admin/view_employees">Employees</a>
+    </div>
+
+    <%}%>
+    <div class="signout">
+      <a href="/signout">Sign out</a>
+    </div>
+  </div>
+</div>
+
+<script src="/js/_navbar.js"></script>

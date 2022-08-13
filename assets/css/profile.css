@@ -1,0 +1,13 @@
+.review .reviewStar{
+    font-size: 1.2rem;
+    color: rgb(255, 0, 76);
+    align-self: flex-end;
+    padding:0 2px;
+    display: flex; 
+    margin-top: 10px;
+    justify-content: space-between;
+     width: 100%;
+}
+.container a:hover{
+    text-decoration: underline;
+}

@@ -3,20 +3,22 @@ const app = express();
 const path = require("path");
 const db = require("./config/mongoose");
 const flash = require("connect-flash");
-const flashMiddleware = require("./config/flashMessage");
 const passport = require("passport");
 const mongoStore = require("connect-mongo");
 const session = require("express-session");
 const passportLocal = require("./config/passport_local");
 const expressEjsLayout = require("express-ejs-layouts");
 
+// RUNNING PORT
 const port = 8000;
 
+// TO READ FORM DATA BY SERVER-SIDE, SEND BY CLIENT-SIDE
 app.use(express.urlencoded());
 
-// static files setting
+// STATIC FILES SETTING
 app.use(express.static(path.join(__dirname, "assets")));
 
+// TO SETUP EXPRESS-SESSION
 app.use(
   session({
     name: "codial",
@@ -40,14 +42,12 @@ app.use(
   })
 );
 
+// SETTING FOR PASSPORT.JS
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
-// to use flash messages
-app.use(flash());
-app.use(flashMiddleware.flashMessage);
 
-// ejs setting and ejs layouts
+// EJS SETTING
 app.use(expressEjsLayout);
 app.set("layout extractScripts", true);
 app.set("layout extractStyles", true);

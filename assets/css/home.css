@@ -2,49 +2,6 @@ body{
     text-align: center;
 }
 
-.navbar{
-    height: 50px;
-    background-color: rgb(14, 1, 68);
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    align-items: center;
-    padding: 0 10px;
-}
-.navbar a{
-    text-decoration: none;
-    color: inherit;
-}
-.navbar h2{
-    letter-spacing: 1px;
-    font-weight: 900;
-}
-
-#username{
-    color: rgb(252, 241, 18);
-    font-size: 1.5rem;
-    font-weight: 900;
-}
-
-.nav_links{
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-}
-.nav_links div{
-    padding: 5px 10px;
-}
-.nav_links div:not(:nth-child(1)):hover{
-    background-color: rgb(29, 201, 249);
-}
-
-.container{
-    text-align: center;
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    align-items: center;
-}
 .reviewheading{
     width:400px;
     padding: 10px 0;
@@ -53,4 +10,185 @@ body{
     text-align: center;
     box-shadow: 0px 0px 10px 2px #155a78;
     margin: 30px auto;
+}
+.container{
+    text-align: center;
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+}
+.charts{
+    width: 100%;
+    height: 300px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chart_show{
+    width: 100%;
+    height: 90%;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.chart_show>div{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.filldiv{
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    width: 90%;
+}
+
+#five{
+    background-color: rgb(255, 71, 71);
+}
+#four{
+    background-color: rgb(45, 198, 11);
+}
+#three{
+    background-color: rgb(255, 222, 6);
+}
+#two{
+    background-color: rgb(245, 6, 197);
+}
+#one{
+    background-color: rgb(21, 252, 248);
+}
+
+.starname{
+    width: 10%;
+}
+
+.reviews{
+    width: 50%;
+    height: auto;
+}
+
+.review{
+    width: 90%;
+    min-height: 150px;
+    background-color: #B9D9EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.review .dp{
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+.review .dp img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.review .reviewText{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+    padding: 0 5px;
+    margin: 10px 0;
+    text-align: justify;
+}
+.review .reviewStar{
+    font-size: 1.5rem;
+    color: rgb(255, 0, 76);
+    align-self: flex-end;
+    
+}
+
+
+.assign_review{
+    width: 45%;
+    height: auto;
+}
+
+.assign_container{
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+}
+.newAssign{
+    width: 100%;
+    height: 150px;
+    background-color: #B0E0E6;
+    box-shadow: 1px 1px 5px 1px rgb(18, 103, 176);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.newAssign{
+    margin: 10px auto;
+}
+.assignuser{
+    width: 100%;
+    display: flex;
+}
+.assignpic{
+    width:50px;
+    height: 50px;
+}
+.assignpic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.assignbtns{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.assignbtns button{
+    padding: 10px 15px;
+    background: transparent;
+    border: 2px solid rgb(14, 4, 98);
+    outline: none;
+}
+.assignbtns button:hover{
+    background-color: rgb(14, 4, 98);
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+    .container{
+        flex-direction: column-reverse;
+    }
+    .assign_review{
+        width: 100%;
+    }
+    .reviews{
+        width: 100%;
+    }
+    .review{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .container{
+        padding: 0 2px;
+    }
+    .assign_container{
+        width: 100%;
+    }
+    .reviewheading{
+        width: 100%;
+    }
+    .assignbtns button{
+        padding: 5px 10px;
+        font-size: .8rem;
+    }
 }
