@@ -7,7 +7,7 @@ const mongoStore = require("connect-mongo");
 const session = require("express-session");
 const passportLocal = require("./config/passport_local");
 const expressEjsLayout = require("express-ejs-layouts");
-const ENV = require("./environment");
+// const ENV = require("./environment");
 
 // RUNNING PORT
 const port = 8000;
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.use(
   session({
     name: "codial",
-    secret: ENV.SECRATE_KEY,
+    secret: "something",
     saveUninitialized: false,
     resave: false,
     cookie: {
